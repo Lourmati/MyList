@@ -1,2 +1,2 @@
 # MyList
-Basic interactive list mobile app coded with Android Studio
+Interactive list mobile app coded with Android Studio
