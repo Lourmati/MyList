@@ -3,6 +3,8 @@ package com.example.mylist;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,29 +22,13 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         void onDeleteClick(int position);
     }
 
-    public static class ItemViewHolder extends RecyclerView.ViewHolder {
+    public class ItemViewHolder extends RecyclerView.ViewHolder {
 
-
+        private TextView nomItem;
 
         public ItemViewHolder(View view, final OnItemClickListener listener) {
             super(view);
-
-
-
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    // vérifier que le listener n'est pas null
-                    if (listener != null) {
-                        int position = getAdapterPosition();
-                        // la position est valide?
-                        if (position != RecyclerView.NO_POSITION) {
-                            //listener.onItemClick(position);
-                        }
-                    }
-                }
-            });
-
+            nomItem = view.findViewById(R.id.nomItem);
         }
     }
 
@@ -63,10 +49,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
-        String item = list.get(position);
-        //holder.tvNom.setText(client.getNom());
-        //holder.tvPrenom.setText(client.getPrenom());
-        //holder.ivPhoto.setImageResource(client.getImage());
+        holder.nomItem.setText(list.get(position));
     }
 
     @Override

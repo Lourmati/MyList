@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyList</string>
+    <string name="data_inserted" translatable="false">Données sauvegardé !</string>
+    <string name="data_notinserted">Erreur de sauvegarde</string>
+    <string name="new_list">Nouvelle Liste</string>
+    <string name="selected_list">a été selectionnée</string>
+</resources>

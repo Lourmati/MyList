@@ -15,30 +15,28 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
     private ArrayList<Note> list;
     private OnItemClickListener listener;
 
+
     public interface OnItemClickListener {
         void onItemClick(int position);
 
         void onDeleteClick(int position);
     }
 
-    public static class NoteViewHolder extends RecyclerView.ViewHolder {
+    public class NoteViewHolder extends RecyclerView.ViewHolder {
 
-
+        private TextView tvNomListe;
 
         public NoteViewHolder(View view, final OnItemClickListener listener) {
             super(view);
-
-
+            tvNomListe = view.findViewById(R.id.nomListe);
 
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    // vérifier que le listener n'est pas null
                     if (listener != null) {
                         int position = getAdapterPosition();
-                        // la position est valide?
                         if (position != RecyclerView.NO_POSITION) {
-                            //listener.onItemClick(position);
+                            listener.onItemClick(position);
                         }
                     }
                 }
@@ -65,14 +63,13 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
     @Override
     public void onBindViewHolder(@NonNull NoteViewHolder holder, int position) {
         Note note = list.get(position);
-        //holder.tvNom.setText(client.getNom());
-        //holder.tvPrenom.setText(client.getPrenom());
-        //holder.ivPhoto.setImageResource(client.getImage());
+        holder.tvNomListe.setText(note.getNom());
     }
 
     @Override
     public int getItemCount() {
         return list.size();
     }
+
 
 }

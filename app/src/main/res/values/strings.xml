@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MyList</string>
+    <string name="selected_list"> has been selected</string>
+    <string name="new_list">New List</string>
+    <string name="data_inserted">Data Successfully Inserted!</string>
+    <string name="data_notinserted">Something went wrong</string>
+
 </resources>
